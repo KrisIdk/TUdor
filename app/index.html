@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laya AI • TU Sofia Semantic Map & Model Tool Interface</title>
+  <meta name="description" content="Semantic map and AI decoder model interface for Technical University of Sofia. Provides grounded knowledge and tool integration for AI models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <span class="logo-symbol">✦</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">LAYA <span class="brand-tag">DECODER</span></span>
+          <span class="brand-sub">TU SOFIA SEMANTIC GRAPH</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#chat" class="nav-item active">AI Чатбот (ТУдор + Laya)</a>
+        <a href="#console" class="nav-item">Raw Tools Console</a>
+        <a href="#faculties" class="nav-item">Факултети</a>
+        <a href="#admissions" class="nav-item">Прием 2026</a>
+        <a href="#m2m" class="nav-item">Model-to-Model</a>
+      </nav>
+      <div class="nav-status">
+        <span class="status-indicator"></span>
+        <span class="status-text">ТУдор + Laya Online</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        <span>Laya (Knowledge Decoder) + ТУдор (Gemma 4:e2b Говорител)</span>
+      </div>
+      <h1 class="hero-title">
+        Семантична карта и AI интерфейс за <span class="gradient-text">ТУ-София</span>
+      </h1>
+      <p class="hero-desc">
+        Двумоделен AI тандем: <strong>Laya</strong> светкавично сканира и верифицира университетската екосистема (tu-sofia.bg, priem.tu-sofia.bg, ects.tu-sofia.bg), а <strong>ТУдор</strong> (Gemma 4:e2b) разговаря свободно с вас и ви предава откритите факти с 0% риск от халюцинации.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="stat-faculties">17</span>
+          <span class="stat-label">Факултета с декани</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-curricula">19</span>
+          <span class="stat-label">ECTS пакета с планове</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">2026/27</span>
+          <span class="stat-label">Приемна кампания</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">0%</span>
+          <span class="stat-label">Халюцинации (M2M)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-layout">
+    
+    <!-- SECTION 0: LAYA + ТУДОР CHATBOT -->
+    <section id="chat" class="panel-section chatbot-section">
+      <div class="section-header">
+        <div class="header-icon chatbot-icon">💬</div>
+        <div style="flex: 1;">
+          <div class="chat-header-row">
+            <h2>AI Чатбот: Laya (Търсач) + ТУдор (Говорител)</h2>
+            <div class="model-tags">
+              <span class="badge-model laya-badge">✦ Laya Decoder</span>
+              <span class="badge-plus">+</span>
+              <span class="badge-model gemma-badge">✦ ТУдор (Gemma 4:e2b)</span>
+            </div>
+          </div>
+          <p>Попитайте ТУдор за специалности, факултети, семестриални такси и държавна поръчка. Laya извлича точните факти в реално време, а ТУдор ви ги разяснява.</p>
+        </div>
+      </div>
+
+      <!-- Chat Container -->
+      <div class="chat-window">
+        <div class="chat-messages" id="chat-messages">
+          <!-- Initial Welcome Message from ТУдор -->
+          <div class="chat-message bot-message">
+            <div class="message-avatar">🎓</div>
+            <div class="message-body">
+              <div class="message-sender">
+                <span class="sender-name">ТУдор</span>
+                <span class="sender-role">AI Консултант на ТУ-София</span>
+                <span class="grounded-by">✓ Проверено от Laya</span>
+              </div>
+              <div class="message-text">
+                Здравейте! Аз съм <strong>ТУдор</strong>, вашият AI консултант за Технически университет – София.<br><br>
+                Моят модел-партньор <strong>Laya</strong> светкавично претърсва и извлича официалните данни за факултети, декани, кандидатстудентски изпити, семестриални такси, държавна поръчка и учебни планове, а аз съм тук да ви помогна с точна и ясна информация.<br><br>
+                С какво мога да ви помогна днес?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-container">
+          <div class="chat-input-wrapper">
+            <input type="text" id="chat-user-input" placeholder="Попитайте ТУдор нещо за ТУ-София (напр. 'Колко пари е държавна поръчка специалността ИСИГД(АЕ) на семестър?')...">
+            <button id="btn-send-chat" class="btn-chat-send">
+              <span>Изпрати</span>
+              <span class="arrow">➤</span>
+            </button>
+          </div>
+
+          <div class="chat-suggestions">
+            <span class="chips-label">Популярни въпроси:</span>
+            <button class="chat-suggest-chip" data-q="Колко пари е държавна поръчка специалността ИСИГД(АЕ) на семестър?">Такса за ИСИГД (АЕ)?</button>
+            <button class="chat-suggest-chip" data-q="Кой е декан на ФКСТ и как да се свържа с него?">Декан на ФКСТ?</button>
+            <button class="chat-suggest-chip" data-q="Какви са таксите за кандидатстване и изпити през 2026 г.?">Такси за кандидатстване 2026?</button>
+            <button class="chat-suggest-chip" data-q="Какви са крайните срокове за подаване на документи за прием 2026?">Срокове за прием 2026?</button>
+            <button class="chat-suggest-chip" data-q="Къде се намират студентските общежития и какъв е капацитетът им?">Общежития (ПССО)?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: LAYA AI INTERACTIVE CONSOLE -->
+    <section id="console" class="panel-section">
+      <div class="section-header">
+        <div class="header-icon">⚙️</div>
+        <div>
+          <h2>Laya Raw Tools Конзола & M2M JSON Payload</h2>
+          <p>Инспекция на суровите резултати и JSON схеми, които Laya генерира за други модели.</p>
+        </div>
+      </div>
+
+      <div class="search-box-container">
+        <div class="input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="ai-query-input" placeholder="Напишете въпрос или код (напр. 'ФКСТ', 'такси кандидатстване', 'декан на факултет Автоматика', 'FKST')..." value="ФКСТ">
+          <button id="btn-run-query" class="btn-primary">
+            <span>Изпълни</span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <div class="quick-chips">
+          <span class="chips-label">Бързи тестове:</span>
+          <button class="chip" data-q="ФКСТ">ФКСТ</button>
+          <button class="chip" data-q="Такси за кандидатстване">Такси за кандидатстване</button>
+          <button class="chip" data-q="Декан на факултет Автоматика">Декан на ФА</button>
+          <button class="chip" data-q="Календарен график 2026">График 2026</button>
+          <button class="chip" data-q="Общежития">Общежития (ПССО)</button>
+          <button class="chip" data-q="FKST">FKST (Latin)</button>
+        </div>
+      </div>
+
+      <!-- Live AI Output Grid -->
+      <div class="console-output-grid">
+        <!-- Left: Model Reasoning & Formatted Output -->
+        <div class="output-card ai-response-card">
+          <div class="card-topbar">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="topbar-title">Laya Model Output • Grounded Response</span>
+            <span class="badge-verified">✓ Verified Facts</span>
+          </div>
+
+          <div class="reasoning-box" id="reasoning-box">
+            <div class="reasoning-header">
+              <span class="pulse-spark">⚡</span>
+              <span>Laya Decoder Reasoning & Disambiguation:</span>
+            </div>
+            <div class="reasoning-text" id="reasoning-text">
+              Анализиране на заявката...
+            </div>
+          </div>
+
+          <div class="response-content" id="response-content">
+            <!-- Dynamic AI Cards rendered here -->
+          </div>
+        </div>
+
+        <!-- Right: Model-to-Model Hand-off Envelope -->
+        <div class="output-card m2m-envelope-card" id="m2m">
+          <div class="card-topbar">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="topbar-title">M2M Payload Envelope (JSON Schema Output)</span>
+            <button class="btn-copy" id="btn-copy-json">Копирай JSON</button>
+          </div>
+          <div class="json-viewer-container">
+            <pre class="json-code"><code id="m2m-json-code">// Зареждане на M2M envelope...</code></pre>
+          </div>
+          <div class="card-footer-info">
+            <span>ℹ Готов за предаване към: Gemini, GPT-4, Claude, Llama чрез Tool / Function Call.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: UNIVERSITY ECOSYSTEM BROWSER -->
+    <section id="faculties" class="panel-section">
+      <div class="section-header">
+        <div class="header-icon">🏛</div>
+        <div>
+          <h2>Академична структура и Факултети</h2>
+          <p>Всички 17 картографирани основни звена, ръководства, катедри и ECTS планове.</p>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Всички (17)</button>
+        <button class="filter-btn" data-filter="tech">Информационни & Технически</button>
+        <button class="filter-btn" data-filter="foreign">Чуждоезикови (DE, FR, EN)</button>
+        <button class="filter-btn" data-filter="branches">Филиали (Пловдив, Сливен)</button>
+      </div>
+
+      <!-- Faculties Cards Grid -->
+      <div class="faculties-grid" id="faculties-grid">
+        <!-- Cards dynamically injected -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: ADMISSIONS 2026 TIMELINE & FEES -->
+    <section id="admissions" class="panel-section">
+      <div class="section-header">
+        <div class="header-icon">📅</div>
+        <div>
+          <h2>Прием 2026/2027 • График и Такси</h2>
+          <p>Официални срокове за подаване на документи, предварителни изпити и класирания (priem.tu-sofia.bg).</p>
+        </div>
+      </div>
+
+      <div class="admissions-grid">
+        <!-- Timeline -->
+        <div class="adm-card timeline-card">
+          <h3 class="card-heading">Календарен график за кандидатстване</h3>
+          <div class="timeline-list" id="timeline-list">
+            <!-- Dynamic timeline items -->
+          </div>
+        </div>
+
+        <!-- Fees & Rules -->
+        <div class="adm-card fees-card">
+          <h3 class="card-heading">Такси и Условия (2026 г.)</h3>
+          <div class="fee-badge-box">
+            <span class="fee-currency">€30</span>
+            <span class="fee-sub">или 60 лв. за участие на един изпит / признаване на матура</span>
+          </div>
+          <div class="fee-rules">
+            <div class="rule-item">
+              <span class="rule-icon">✓</span>
+              <div>
+                <strong>Предварителни изпити:</strong> Кандидат-студентите, ползващи оценка от предварителен изпит, подават документи за класиране <strong>БЕЗ</strong> доплащане на допълнителна такса.
+              </div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-icon">✓</span>
+              <div>
+                <strong>Документи по интернет:</strong> Възможност за подаване онлайн или в центровете на ЦКПИ в цялата страна.
+              </div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-icon">✓</span>
+              <div>
+                <strong>Държавна поръчка:</strong> Семестриални такси по държавен план се субсидират от държавата (средно 300 - 450 лв./семестър).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TOOL SCHEMAS FOR DOWNSTREAM MODELS -->
+    <section id="schemas" class="panel-section">
+      <div class="section-header">
+        <div class="header-icon">⚙️</div>
+        <div>
+          <h2>Стандартизирани JSON схеми за инструменти (Function Calling)</h2>
+          <p>Спецификация за OpenAI, Gemini, Anthropic и Model Context Protocol (MCP).</p>
+        </div>
+      </div>
+
+      <div class="schemas-wrapper">
+        <div class="schema-tabs" id="schema-tabs">
+          <!-- Dynamic schema buttons -->
+        </div>
+        <div class="schema-display">
+          <pre class="json-code"><code id="active-schema-code">// Изберете инструмент по-горе...</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for Faculty Details -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-faculty-title">Детайли за Факултет</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-faculty-body">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>Laya TU Sofia Semantic Knowledge Interface • Проектиран за автономни AI модели и агенти.</p>
+      <p class="footer-sub">Източници на данни: tu-sofia.bg, priem.tu-sofia.bg, ects.tu-sofia.bg. Всички права запазени.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

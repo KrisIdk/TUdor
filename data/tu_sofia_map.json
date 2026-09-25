@@ -1,0 +1,294 @@
+{
+  "root": "https://tu-sofia.bg",
+  "nodes": [
+    {
+      "id": "faculty-of-applied-mathematics-and-informatics",
+      "type": "faculty",
+      "label": "Факултет по приложна математика и информатика",
+      "acronym": "ФПМИ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-applied-mathematics-and-informatics",
+      "details": "Декан: проф. д-р инж. Десислава Иванова | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-automation",
+      "type": "faculty",
+      "label": "Факултет по автоматика",
+      "acronym": "ФА",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-automation",
+      "details": "Декан: доц. д-р инж. Цоньо Славов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-computer-systems-and-technologies",
+      "type": "faculty",
+      "label": "Факултет по компютърни системи и технологии",
+      "acronym": "ФКСТ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-computer-systems-and-technologies",
+      "details": "Декан: проф. д-р инж. Румен Трифонов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-economics",
+      "type": "faculty",
+      "label": "Стопански факултет",
+      "acronym": "СФ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-economics",
+      "details": "Декан: проф. д-р инж. Йорданка Ангелова | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-electrical-engineering",
+      "type": "faculty",
+      "label": "Електротехнически факултет",
+      "acronym": "ЕФ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electrical-engineering",
+      "details": "Декан: доц. д-р инж. Николай Матанов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-electronic-engineering-and-technologies",
+      "type": "faculty",
+      "label": "Факултет по електронна техника и технологии",
+      "acronym": "ФЕТТ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electronic-engineering-and-technologies",
+      "details": "Декан: проф. дтн инж. Иво Илиев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-electronics-and-automation",
+      "type": "faculty",
+      "label": "Факултет по електроника и автоматика - Филиал Пловдив",
+      "acronym": "ФЕА",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electronics-and-automation",
+      "details": "Декан: доц. д-р инж. Митко Шопов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-engineering-and-pedagogy-sliven",
+      "type": "faculty",
+      "label": "Инженерно-педагогически факултет - Сливен",
+      "acronym": "ИПФ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-engineering-and-pedagogy-sliven",
+      "details": "Декан: доц. д-р инж. Невен Кръстев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-english-engineering-education",
+      "type": "faculty",
+      "label": "Факултет за английско инженерно обучение",
+      "acronym": "ФАИО",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-english-engineering-education",
+      "details": "Декан: проф. д-р инж. Ташо Ташев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-french-engineering-education",
+      "type": "faculty",
+      "label": "Факултет за френско обучение по електроинженерство",
+      "acronym": "ФФИО",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-french-engineering-education",
+      "details": "Декан: доц. д-р инж. Димитър Дичев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-german-engineering-education-and-industrial-management",
+      "type": "faculty",
+      "label": "Факултет за германско инженерно обучение и промишлен мениджмънт (FDIBA)",
+      "acronym": "ФаГИОПМ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-german-engineering-education-and-industrial-management",
+      "details": "Декан: проф. дтн инж. Марин Маринов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-industrial-technology",
+      "type": "faculty",
+      "label": "Факултет по индустриални технологии",
+      "acronym": "ФИТ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-industrial-technology",
+      "details": "Декан: проф. д-р инж. Константин Камберов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-mechanical-engineering",
+      "type": "faculty",
+      "label": "Машиностроителен факултет",
+      "acronym": "МФ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-mechanical-engineering",
+      "details": "Декан: проф. д-р инж. Стилиян Николов | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-mechanical-engineering-and-instrumentation",
+      "type": "faculty",
+      "label": "Факултет по машиностроене и уредостроене - Филиал Пловдив",
+      "acronym": "ФМУ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-mechanical-engineering-and-instrumentation",
+      "details": "Декан: доц. д-р инж. Красимир Амбарев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-power-engineering",
+      "type": "faculty",
+      "label": "Енергомашиностроителен факултет",
+      "acronym": "ЕМФ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-power-engineering",
+      "details": "Декан: проф. д-р инж. Ангел Терзиев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-telecommunications",
+      "type": "faculty",
+      "label": "Факултет по телекомуникации",
+      "acronym": "ФТК",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-telecommunications",
+      "details": "Декан: проф. д-р инж. Агата Манолова | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "faculty-of-transport",
+      "type": "faculty",
+      "label": "Факултет по транспорта",
+      "acronym": "ФТ",
+      "url": "https://tu-sofia.bg/bg/faculties/faculty-of-transport",
+      "details": "Декан: проф. д-р инж. Красимир Неделчев | Кампус ТУ-София, Каб. "
+    },
+    {
+      "id": "technical-college-sofia",
+      "type": "college",
+      "label": "Технически Колеж - София: Специалности и Обучение",
+      "url": "https://tu-sofia.bg/bg/colleges/technical-college-sofia"
+    },
+    {
+      "id": "college-sliven",
+      "type": "college",
+      "label": "Колеж - Сливен: Висше образование и специалности",
+      "url": "https://tu-sofia.bg/bg/colleges/college-sliven"
+    },
+    {
+      "id": "priem-2026",
+      "type": "admissions",
+      "label": "Прием 2026/2027",
+      "url": "https://priem.tu-sofia.bg",
+      "details": "9 ключови календарни дати и такси"
+    },
+    {
+      "id": "ects-curricula",
+      "type": "curricula",
+      "label": "ЕСНТК / Учебни планове (ECTS)",
+      "url": "https://ects.tu-sofia.bg",
+      "details": "19 каталогизирани факултетни пакета"
+    }
+  ],
+  "categories": {
+    "faculties": [
+      {
+        "title": "Факултет по приложна математика и информатика",
+        "acronym": "ФПМИ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-applied-mathematics-and-informatics"
+      },
+      {
+        "title": "Факултет по автоматика",
+        "acronym": "ФА",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-automation"
+      },
+      {
+        "title": "Факултет по компютърни системи и технологии",
+        "acronym": "ФКСТ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-computer-systems-and-technologies"
+      },
+      {
+        "title": "Стопански факултет",
+        "acronym": "СФ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-economics"
+      },
+      {
+        "title": "Електротехнически факултет",
+        "acronym": "ЕФ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electrical-engineering"
+      },
+      {
+        "title": "Факултет по електронна техника и технологии",
+        "acronym": "ФЕТТ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electronic-engineering-and-technologies"
+      },
+      {
+        "title": "Факултет по електроника и автоматика - Филиал Пловдив",
+        "acronym": "ФЕА",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-electronics-and-automation"
+      },
+      {
+        "title": "Инженерно-педагогически факултет - Сливен",
+        "acronym": "ИПФ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-engineering-and-pedagogy-sliven"
+      },
+      {
+        "title": "Факултет за английско инженерно обучение",
+        "acronym": "ФАИО",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-english-engineering-education"
+      },
+      {
+        "title": "Факултет за френско обучение по електроинженерство",
+        "acronym": "ФФИО",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-french-engineering-education"
+      },
+      {
+        "title": "Факултет за германско инженерно обучение и промишлен мениджмънт (FDIBA)",
+        "acronym": "ФаГИОПМ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-german-engineering-education-and-industrial-management"
+      },
+      {
+        "title": "Факултет по индустриални технологии",
+        "acronym": "ФИТ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-industrial-technology"
+      },
+      {
+        "title": "Машиностроителен факултет",
+        "acronym": "МФ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-mechanical-engineering"
+      },
+      {
+        "title": "Факултет по машиностроене и уредостроене - Филиал Пловдив",
+        "acronym": "ФМУ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-mechanical-engineering-and-instrumentation"
+      },
+      {
+        "title": "Енергомашиностроителен факултет",
+        "acronym": "ЕМФ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-power-engineering"
+      },
+      {
+        "title": "Факултет по телекомуникации",
+        "acronym": "ФТК",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-telecommunications"
+      },
+      {
+        "title": "Факултет по транспорта",
+        "acronym": "ФТ",
+        "url": "https://tu-sofia.bg/bg/faculties/faculty-of-transport"
+      }
+    ],
+    "colleges": [
+      {
+        "title": "Технически Колеж - София: Специалности и Обучение",
+        "url": "https://tu-sofia.bg/bg/colleges/technical-college-sofia",
+        "slug": "technical-college-sofia",
+        "markdown_file": "knowledge/colleges/technical-college-sofia.md"
+      },
+      {
+        "title": "Колеж - Сливен: Висше образование и специалности",
+        "url": "https://tu-sofia.bg/bg/colleges/college-sliven",
+        "slug": "college-sliven",
+        "markdown_file": "knowledge/colleges/college-sliven.md"
+      }
+    ],
+    "divisions": [
+      {
+        "title": "Департамент по чуждоезиково обучение и лингвистика ТУ-София",
+        "url": "https://tu-sofia.bg/bg/divisions/department-of-foreign-language-teaching-and-applied-linguistics",
+        "slug": "department-of-foreign-language-teaching-and-applied-linguistics",
+        "markdown_file": "knowledge/divisions/department-of-foreign-language-teaching-and-applied-linguistics.md"
+      },
+      {
+        "title": "Департамент по физическо възпитание и спорт - ТУ София",
+        "url": "https://tu-sofia.bg/bg/divisions/department-of-physical-education-and-sports",
+        "slug": "department-of-physical-education-and-sports",
+        "markdown_file": "knowledge/divisions/department-of-physical-education-and-sports.md"
+      },
+      {
+        "title": "Департамент за квалификация на учители - ТУ София",
+        "url": "https://tu-sofia.bg/bg/divisions/department-of-teacher-qualification-and-professional-development",
+        "slug": "department-of-teacher-qualification-and-professional-development",
+        "markdown_file": "knowledge/divisions/department-of-teacher-qualification-and-professional-development.md"
+      }
+    ],
+    "admissions": [],
+    "curricula": [],
+    "services": [],
+    "contacts": []
+  }
+}
