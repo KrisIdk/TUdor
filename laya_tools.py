@@ -51,6 +51,20 @@ def _load_map() -> Dict[str, Any]:
     return _MAP_CACHE
 
 
+def clean_specialty_title(s: str) -> str:
+    """Cleans concatenated web-scraped specialty strings into clean human-readable titles."""
+    if not s:
+        return ""
+    m = re.match(r'^(.*?)(?:([A-Za-z][A-Za-z0-9\u0435\u0415]*))?\s*(Бакалавър.*|Магистър.*|Доктор.*)$', s)
+    if m:
+        title = m.group(1).strip()
+        acr = m.group(2)
+        deg = m.group(3).strip()
+        acr_clean = f" ({acr})" if acr and acr.lower() not in ["бакалавър", "магистър", "доктор"] else ""
+        return f"{title}{acr_clean} - {deg}"
+    return s.strip()
+
+
 # ==============================================================================
 # 1. CORE LAYA TOOLS
 # ==============================================================================
@@ -87,6 +101,7 @@ def search_tu_sofia(query: str, limit: int = 5) -> List[Dict[str, Any]]:
         acronym = faculty.get("acronym", "")
         dean = faculty.get("dean", "").lower()
         departments = [d.lower() for d in faculty.get("departments", [])]
+        specialties = faculty.get("specialties", [])
 
         if target_acronym and acronym == target_acronym:
             score += 100
@@ -109,13 +124,33 @@ def search_tu_sofia(query: str, limit: int = 5) -> List[Dict[str, Any]]:
             if any(st in dept for st in query_stems):
                 score += 15
 
+        # Check specialties (high-value curriculum match)
+        matched_specs = []
+        for spec in specialties:
+            clean_s = clean_specialty_title(spec).lower()
+            if any(st in clean_s for st in query_stems):
+                score += 30
+                matched_specs.append(clean_specialty_title(spec))
+
         if score > 0:
+            spec_list_clean = [clean_specialty_title(s) for s in specialties[:3]]
+            spec_preview = f"Специалности: {', '.join(spec_list_clean)}" if spec_list_clean else ""
+            snippet_elements = [
+                f"Декан: {faculty.get('dean', 'Н/А')}",
+                f"{faculty.get('block', 'ТУ-София')}, {faculty.get('cabinet', '')}",
+                f"Тел: {faculty.get('phone', 'Н/А')}",
+                f"Катедри: {', '.join(faculty.get('departments', [])[:3])}"
+            ]
+            if spec_preview:
+                snippet_elements.append(spec_preview)
+
             results.append({
                 "type": "faculty",
                 "title": faculty.get("name_bg"),
                 "acronym": acronym,
                 "score": score,
-                "snippet": f"Декан: {faculty.get('dean', 'Н/А')} | {faculty.get('block', 'ТУ-София')}, {faculty.get('cabinet', '')}. Тел: {faculty.get('phone', 'Н/А')}. Катедри: {', '.join(faculty.get('departments', [])[:3])}",
+                "snippet": " | ".join(snippet_elements),
+                "specialties": [clean_specialty_title(s) for s in specialties],
                 "url": faculty.get("url"),
                 "markdown_file": faculty.get("markdown_file"),
                 "slug": faculty.get("slug")
@@ -210,6 +245,7 @@ def get_faculty_info(faculty_name_or_code: str) -> Dict[str, Any]:
                 "email": faculty.get("email")
             },
             "departments": faculty.get("departments", []),
+            "specialties": [clean_specialty_title(s) for s in faculty.get("specialties", [])],
             "curricula_ects": faculty.get("ects_data"),
             "url": faculty.get("url"),
             "markdown_file": faculty.get("markdown_file")

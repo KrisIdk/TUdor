@@ -129,7 +129,11 @@ function generateLayaReasoning(query) {
   const q = query.toLowerCase();
   let reasoning = "";
 
-  if (/\b(фкст|fkst|кст|kst|компютърни|kompyutarni)\b/i.test(q)) {
+  if (/(\b(исигд|isigd|sich|исидг|isidg)\b|(интелигент|inteligent).*(систем|sistem))/i.test(q)) {
+    reasoning = `<strong>[Intent: Specialty Lookup]</strong> Разпозната специалност <code>ИСИГД / SICH</code> (Интелигентни системи в индустрията, града и дома). Основен факултет: <em>Факултет по автоматика (ФА)</em> (и ФАИО на английски език).`;
+  } else if (/(\b(ити|iti)\b|(интелигент|inteligent).*(технолог|tehnolog))/i.test(q)) {
+    reasoning = `<strong>[Intent: Specialty Lookup]</strong> Разпозната специалност <code>ИТИ / ITI</code> (Интелигентни технологии в индустрията). Основен факултет: <em>Факултет по компютърни системи и технологии (ФКСТ)</em>.`;
+  } else if (/\b(фкст|fkst|кст|kst|компютърни|kompyutarni)\b/i.test(q)) {
     reasoning = `<strong>[Intent: Faculty Lookup]</strong> Разпознат факултет <code>ФКСТ / FKST</code>. Каноничен обект: <em>Факултет по компютърни системи и технологии</em>. Декан: проф. д-р инж. Румен Трифонов.`;
   } else if (/\b(фа|fa|автоматика|avtomatika)\b/i.test(q)) {
     reasoning = `<strong>[Intent: Faculty Lookup]</strong> Разпознат факултет <code>ФА / FA</code>. Каноничен обект: <em>Факултет по автоматика</em>. Декан: доц. д-р инж. Цоньо Славов.`;
