@@ -6,7 +6,7 @@ acronym expansion, and morphology/stemming heuristics for AI decoder models like
 
 import re
 import unicodedata
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Any
 
 # Bulgarian State Transliteration Standard (Law on Transliteration)
 CYR_TO_LAT = {

@@ -4,9 +4,14 @@ Verifies Bulgarian NLP disambiguation, acronym resolution, admissions queries,
 faculty lookups, and model-to-model JSON payloads.
 """
 
+import os
 import sys
 import unittest
 import json
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
 from laya_tools import (
     search_tu_sofia,
